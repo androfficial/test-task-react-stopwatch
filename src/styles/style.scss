@@ -1,0 +1,161 @@
+/* stylelint-disable scss/no-global-function-names */
+/* stylelint-disable no-invalid-position-at-import-rule */
+@use 'sass:math';
+
+// === <ПЕРЕМЕННЫЕ> ===================================================
+$maxWidthContainer: 1170;
+$maxWidth: 1920;
+
+// === <KEYFRAMES> ======================================================
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// === <МИКСИНЫ> ======================================================
+@import 'mixins/mixins';
+
+// === <ШРИФТЫ ЛОКАЛЬНЫЕ> =============================================
+@import 'blocks/fonts';
+
+// === <ОБНУЛЕНИЕ> ====================================================
+@import 'blocks/null';
+
+body {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(#fff, 0.95);
+  background-color: #010101;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//<ОБОЛОЧКА>============================================================
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+}
+
+// === <КОНТЕЙНЕР> =====================================================
+._container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+// <ПОДКЛЮЧЕНИЕ ГОТОВЫХ КЛАССОВ>========================================
+@import 'blocks/ui';
+
+// === <ОСНОВНОЙ БЛОК> =================================================
+.page {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  // .page__header
+  &__header {
+    flex: 0 0 80px;
+  }
+  // .page__stopwatch
+  &__stopwatch {
+    flex: 1 1 auto;
+  }
+}
+.header {
+  // .header__inner
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(#fff, 0.4);
+  }
+  // .header__text
+  &__text {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: math.div(40, 32) * 100%;
+    letter-spacing: 1px;
+  }
+}
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  // .stopwatch__container
+  &__container {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+  }
+  // .stopwatch__wrapper
+  &__wrapper {
+    display: flex;
+    flex: 0 1 500px;
+    flex-direction: column;
+    max-width: 500px;
+  }
+  // .stopwatch__top
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:not(:last-child) {
+      margin: 0px 0px 80px 0px;
+    }
+  }
+  // .stopwatch__box
+  &__box {
+    position: relative;
+    flex: 0 0 300px;
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    border-radius: 50%;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      border-color: rgba(#fff, 0.6) transparent;
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 50%;
+    }
+    &._rotation-animation::before {
+      animation: rotate 1s linear infinite;
+    }
+  }
+  // .stopwatch__time
+  &__time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 46px;
+    font-weight: 200;
+    line-height: math.div(48, 44) * 100%;
+    letter-spacing: 3px;
+    transform: translate(-50%, -50%);
+  }
+  // .stopwatch__bottom
+  &__bottom {
+    display: flex;
+    align-items: flex-start;
+  }
+  // .stopwatch__btn
+  &__btn {
+    &:not(:last-child) {
+      margin: 0px 22px 0px 0px;
+    }
+  }
+}

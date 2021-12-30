@@ -1,5 +1,4 @@
 const path = require('path');
-const { alias } = require('react-app-rewire-alias');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
@@ -13,11 +12,6 @@ module.exports = {
         })
       );
     }
-
-    alias({
-      '@components': './src/components',
-      '@styles': './src/styles',
-    })(config);
 
     return config;
   },

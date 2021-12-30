@@ -23,16 +23,6 @@
   },
   "plugins": ["react", "simple-import-sort", "prettier"],
   "settings": {
-    "import/resolver": {
-      "alias": {
-        "map": [
-          ["@", "./src"],
-          ["@components", "./src/components"],
-          ["@styles", "./src/styles"]
-        ],
-        "extensions": [".js", ".jsx", ".json"]
-      }
-    },
     "react": {
       "version": "detect"
     }
@@ -53,6 +43,7 @@
     "react/react-in-jsx-scope": "off",
     "react/no-array-index-key": "off",
     "import/no-named-as-default": 0,
+    "import/prefer-default-export": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/function-component-definition": [

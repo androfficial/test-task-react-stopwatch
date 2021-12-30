@@ -40,5 +40,3 @@ yarn run build
 
 - ReactJS
 - SCSS / Mixins / @Keyframes Animation
-
----

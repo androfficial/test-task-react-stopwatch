@@ -39,4 +39,5 @@ yarn run build
 ### :hammer_and_wrench: Stack:
 
 - ReactJS
+- RxJS
 - SCSS / Mixins / @Keyframes Animation

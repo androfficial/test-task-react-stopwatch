@@ -19,9 +19,6 @@
 }
 .btn-start {
   background-color: green;
-  &:not(:hover):focus {
-    background-color: darken(green, 5%);
-  }
   @media (hover: hover) {
     &:hover {
       background-color: darken(green, 5%);
@@ -30,9 +27,6 @@
 }
 .btn-stop {
   background-color: firebrick;
-  &:not(:hover):focus {
-    background-color: darken(firebrick, 5%);
-  }
   @media (hover: hover) {
     &:hover {
       background-color: darken(firebrick, 5%);
@@ -41,9 +35,6 @@
 }
 .btn-wait {
   background-color: chocolate;
-  &:not(:hover):focus {
-    background-color: darken(chocolate, 5%);
-  }
   @media (hover: hover) {
     &:hover {
       background-color: darken(chocolate, 5%);
@@ -52,9 +43,6 @@
 }
 .btn-reset {
   background-color: #0158ae;
-  &:not(:hover):focus {
-    background-color: darken(#0158ae, 5%);
-  }
   @media (hover: hover) {
     &:hover {
       background-color: darken(#0158ae, 5%);

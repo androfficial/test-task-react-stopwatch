@@ -40,4 +40,5 @@ yarn run build
 
 - ReactJS
 - RxJS
+- Classnames
 - SCSS / Mixins / @Keyframes Animation
